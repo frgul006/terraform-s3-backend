@@ -7,12 +7,27 @@
 ## Methods for creating backend buckets
 It is possible to create the backend bucket manually as most documentation suggests, this repo is provided as an alternative to make sure the bucket is created according to our Cloud Code of Conduct policy.
 
-If state file is required for this action make sure you save it manually in a secure location.
+If state file is required for this specific configuration make sure you save it manually in a secure location, or use an already created backend.
+
+## Creating the backend
+1. Update Variables in variables.tf file
+   - variable "owner"
+   - variable "bucket_name"
+   - variable "key_alias", if needed
+   - variable "product"
+2.  make sure cli is configured for correct aws account.
+3.  run `terraform init`
+4.  run `terraform plan`
+5.  run `terraform apply`
 
 ## Using the backend
-Once the backend is created in your target account you can 
+Once the backend is created in your target account you can add the following snippet into your main.tf file, making sure the values are the same you added in the last step (they cannot be variables).
 
-```
+```hcl
+provider "aws" {
+  region = var.aws_region
+}
+
 terraform {
   required_version = ">= 0.15"
 
