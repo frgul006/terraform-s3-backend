@@ -1,9 +1,12 @@
-# Create S3 bucket
-
 resource "aws_kms_key" "tfstate" {
   description             = "This key is used to encrypt bucket objects"
   deletion_window_in_days = 10
   # This is deletion after destruction of resource.
+}
+
+resource "aws_kms_alias" "tfstate" {
+  name          = var.key_alias
+  target_key_id = aws_kms_key.tfstate.key_id
 }
 
 resource "aws_s3_bucket" "state" {
