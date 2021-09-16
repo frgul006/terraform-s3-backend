@@ -21,7 +21,7 @@ If state file is required for this specific configuration make sure you save it 
 5.  run `terraform apply`
 
 ## Using the backend
-Once the backend is created in your target account you can add the following snippet into your main.tf file, making sure the values are the same you added in the last step (they cannot be variables).
+Once the backend is created in your target account you can add the following snippet into your main.tf file, making sure the values are the same you added in the last step (backend values cannot be variables).
 
 ```hcl
 provider "aws" {
