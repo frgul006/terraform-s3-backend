@@ -12,7 +12,7 @@ If state file is required for this action make sure you save it manually in a se
 ## Using the backend
 Once the backend is created in your target account you can 
 
-`` 
+```
 terraform {
   required_version = ">= 0.15"
 
@@ -30,4 +30,4 @@ terraform {
       region     = "eu-central-1"
   }
 }
-`` 
+```
