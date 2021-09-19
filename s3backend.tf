@@ -1,14 +1,3 @@
-resource "aws_kms_key" "tfstate" {
-  description             = "This key is used to encrypt bucket objects"
-  deletion_window_in_days = 10
-  # This is deletion after destruction of resource.
-}
-
-resource "aws_kms_alias" "tfstate" {
-  name          = var.key_alias
-  target_key_id = aws_kms_key.tfstate.key_id
-}
-
 resource "aws_s3_bucket" "state" {
   bucket = var.bucket_name
   acl    = "private"
@@ -17,7 +6,7 @@ resource "aws_s3_bucket" "state" {
     rule {
       apply_server_side_encryption_by_default {
         kms_master_key_id = aws_kms_key.tfstate.arn
-        sse_algorithm     = "aws:kms"
+        sse_algorithm     = "AES256"
       }
     }
   }
