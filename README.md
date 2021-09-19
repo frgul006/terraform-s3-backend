@@ -21,7 +21,7 @@ If state file is required for this specific configuration make sure you save it 
 5.  run `terraform apply`
 
 ## Using the backend
-Once the backend is created in your target account you can add the following snippet into your main.tf file. The backend config should be placed in the (Terraform block)[https://www.terraform.io/docs/language/settings/index.html#terraform-block-syntax], the terraform block can only contain constants so all values need to be manually entered.
+Once the backend is created in your target account you can add the following snippet into your main.tf file. The backend config should be placed in the [Terraform block](https://www.terraform.io/docs/language/settings/index.html#terraform-block-syntax), the terraform block can only contain constants so all values need to be manually entered.
 
 ```hcl
 provider "aws" {
