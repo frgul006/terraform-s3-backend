@@ -7,7 +7,10 @@
 ## Methods for creating backend buckets
 It is possible to create the backend bucket manually as most documentation suggests, this repo is provided as an alternative to make sure the bucket is created according to our Cloud Code of Conduct policy (encryption, versioning, not public).
 
-If state file is required for this specific configuration make sure you save it manually in a secure location, or use an already created backend.
+If state file is required for this specific configuration make sure you save it manually in a secure location, or use a previously created backend.
+
+### Note on encryption.
+This example uses AES-256 server-side encryption, it is also possible to use aws:kms. More info is available [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html).
 
 ## Creating the backend
 1. Update Variables in variables.tf file
