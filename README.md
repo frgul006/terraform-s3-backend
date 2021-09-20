@@ -16,7 +16,6 @@ This example uses AES-256 server-side encryption, it is also possible to use aws
 1. Update Variables in variables.tf file
    - variable "owner"
    - variable "bucket_name"
-   - variable "key_alias", if needed
    - variable "product"
 2.  make sure aws cli is configured for correct aws account.
 3.  run `terraform init`
