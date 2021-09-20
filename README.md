@@ -42,7 +42,6 @@ terraform {
   }
 
   backend "s3" {
-      kms_key_id = "alias/product/tfstatekey"  
       key        = "tfstates/productname"
       bucket     = "name-of-bucket"
       region     = "region"
